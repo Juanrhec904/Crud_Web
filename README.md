@@ -1,2 +1,27 @@
 # Crud_Web
-Este es un mini proyecto personal de practica en el cual mi objetivo es fortalecer los conocimientos en programación, Hare un crud web de sistema de gestion de  empleados para una empresa de albañileria con las herramientas php, js y node js para backend junto con su respectiva BD 
+Este es un mini proyecto personal de practica en el cual mi objetivo es fortalecer los conocimientos en programación.
+
+Hare un crud web de sistema de gestion de  empleados para una empresa de albañileria 
+
+# Tecnologias Utilizadas 
+- PHP
+- JavaScript
+- HTML5
+- CSS3
+- Bootstrap
+- MySQL
+- Git
+- GitHub
+
+## Funcionalidades
+
+- Registro de empleados.
+- Listado de empleados.
+- Edición de información.
+- Eliminación de empleados.
+- Búsqueda de empleados.
+- Gestión de cargos y salarios.
+- Conexión con base de datos MySQL.
+
+## Objetivo
+Este proyecto fue desarrollado como práctica para fortalecer mis habilidades en desarrollo de software, aplicando buenas prácticas de programación, manejo de bases de datos y control de versiones con Git y GitHub.
