@@ -21,14 +21,24 @@ if (!$emp) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Editar Empleado</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
 </head>
 <body>
-<div class="container mt-5">
-    <h1 class="mb-4">Editar Empleado</h1>
 
-    <form action="procesar_editar.php" method="POST">
+<div class="placa">
+    <span class="tornillo tl"></span>
+    <span class="tornillo bl"></span>
+    <div class="contenedor" style="padding:0;">
+        <h1>Editar empleado</h1>
+        <div class="subtitulo">Actualizando ficha de <?= htmlspecialchars($emp['nombre']) ?></div>
+    </div>
+</div>
+
+<div class="contenedor">
+    <form action="procesar_editar.php" method="POST" class="formulario-obra">
         <input type="hidden" name="id" value="<?= $emp['id'] ?>">
 
         <div class="mb-3">
@@ -78,9 +88,10 @@ if (!$emp) {
             </select>
         </div>
 
-        <button type="submit" class="btn btn-warning">Actualizar Empleado</button>
-        <a href="index.php" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-obra btn-editar">Actualizar empleado</button>
+        <a href="index.php" class="btn btn-obra btn-cancelar">Cancelar</a>
     </form>
 </div>
+
 </body>
 </html>
