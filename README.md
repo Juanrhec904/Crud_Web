@@ -7,7 +7,7 @@ Hare un crud web de sistema de gestion de  empleados para una empresa de albañi
 - PHP
 - JavaScript
 - HTML5
-- CSS3
+- CSS
 - Bootstrap
 - MySQL
 - Git
