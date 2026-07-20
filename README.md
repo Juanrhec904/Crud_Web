@@ -15,11 +15,10 @@ Hare un crud web de sistema de gestion de  empleados para una empresa de albañi
 
 ## Funcionalidades
 
-- Registro de empleados.
 - Listado de empleados.
+- Registro de empleados.
 - Edición de información.
 - Eliminación de empleados.
-- Búsqueda de empleados.
 - Gestión de cargos y salarios.
 - Conexión con base de datos MySQL.
 
