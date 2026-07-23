@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: index.php");
+    exit();
+}
+
 require_once 'config/database.php';
 
 $database = new Database();
@@ -28,7 +34,7 @@ $stmt->bindParam(':salario', $salario);
 $stmt->bindParam(':estado', $estado);
 
 if ($stmt->execute()) {
-    header("Location: index.php");
+    header("Location: empleados.php");
     exit();
 } else {
     echo "Error al guardar el empleado.";

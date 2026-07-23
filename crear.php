@@ -1,4 +1,10 @@
 <?php
+session_start();
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: index.php");
+    exit();
+}
+
 require_once 'config/database.php';
 ?>
 <!DOCTYPE html>
@@ -73,7 +79,7 @@ require_once 'config/database.php';
         </div>
 
         <button type="submit" class="btn btn-obra btn-nuevo">Guardar empleado</button>
-        <a href="index.php" class="btn btn-obra btn-cancelar">Cancelar</a>
+        <a href="empleados.php" class="btn btn-obra btn-cancelar">Cancelar</a>
     </form>
 </div>
 
