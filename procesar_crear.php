@@ -18,9 +18,10 @@ $telefono = $_POST['telefono'];
 $fecha_ingreso = $_POST['fecha_ingreso'];
 $salario = $_POST['salario'];
 $estado = $_POST['estado'];
+$usuario_id = $_SESSION['usuario_id']; // quién está creando este registro
 
-$query = "INSERT INTO empleados (nombre, cedula, cargo, obra_asignada, telefono, fecha_ingreso, salario, estado) 
-          VALUES (:nombre, :cedula, :cargo, :obra_asignada, :telefono, :fecha_ingreso, :salario, :estado)";
+$query = "INSERT INTO empleados (nombre, cedula, cargo, obra_asignada, telefono, fecha_ingreso, salario, estado, usuario_id) 
+          VALUES (:nombre, :cedula, :cargo, :obra_asignada, :telefono, :fecha_ingreso, :salario, :estado, :usuario_id)";
 
 $stmt = $conn->prepare($query);
 
@@ -32,6 +33,7 @@ $stmt->bindParam(':telefono', $telefono);
 $stmt->bindParam(':fecha_ingreso', $fecha_ingreso);
 $stmt->bindParam(':salario', $salario);
 $stmt->bindParam(':estado', $estado);
+$stmt->bindParam(':usuario_id', $usuario_id);
 
 if ($stmt->execute()) {
     header("Location: empleados.php");

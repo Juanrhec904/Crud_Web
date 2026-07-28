@@ -10,7 +10,10 @@ require_once 'config/database.php';
 $database = new Database();
 $conn = $database->getConnection();
 
-$query = "SELECT * FROM empleados ORDER BY id DESC";
+$query = "SELECT empleados.*, usuarios.correo AS registrado_por 
+          FROM empleados 
+          LEFT JOIN usuarios ON empleados.usuario_id = usuarios.id 
+          ORDER BY empleados.id DESC";
 $stmt = $conn->prepare($query);
 $stmt->execute();
 $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -45,6 +48,7 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <a href="crear.php" class="btn btn-obra btn-nuevo mb-3">+ Nuevo empleado</a>
 
     <div class="ficha">
+        <div class="tabla-scroll">
         <table class="tabla-obra">
             <thead>
                 <tr>
@@ -57,6 +61,7 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>Ingreso</th>
                     <th>Salario</th>
                     <th>Estado</th>
+                    <th>Registrado por</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -77,6 +82,9 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <?= $emp['estado'] ?>
                             </span>
                         </td>
+                        <td class="col-correo" style="font-size:0.78rem;" title="<?= $emp['registrado_por'] ? htmlspecialchars($emp['registrado_por']) : '' ?>">
+                            <?= $emp['registrado_por'] ? htmlspecialchars($emp['registrado_por']) : '—' ?>
+                        </td>
                         <td style="white-space:nowrap;">
                             <a href="editar.php?id=<?= $emp['id'] ?>" class="btn btn-obra btn-editar btn-sm">Editar</a>
                             <button type="button" class="btn btn-obra btn-eliminar btn-sm"
@@ -90,10 +98,11 @@ $empleados = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <tr><td colspan="10" class="vacio">No hay empleados registrados aún.</td></tr>
+                    <tr><td colspan="11" class="vacio">No hay empleados registrados aún.</td></tr>
                 <?php endif; ?>
             </tbody>
         </table>
+        </div>
     </div>
 </div>
 
