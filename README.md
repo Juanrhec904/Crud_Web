@@ -1,5 +1,5 @@
 # Crud_Web
-Este es un mini proyecto personal de practica en el cual mi objetivo es fortalecer los conocimientos en programación.
+Este es un proyecto personal de practica en el cual mi objetivo es fortalecer los conocimientos en programación.
 
 Hare un crud web de sistema de gestion de  empleados para una empresa de albañileria 
 
