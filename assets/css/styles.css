@@ -28,7 +28,7 @@ body {
     padding-bottom: 60px;
 }
 
-/* ---------- Placa / encabezado ---------- */
+
 .placa {
     background: var(--carbon);
     color: var(--blanco);
@@ -88,7 +88,7 @@ body {
     padding: 0 40px;
 }
 
-/* ---------- Botones ---------- */
+
 .btn-obra {
     font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
@@ -131,7 +131,46 @@ body {
     box-shadow: none;
 }
 
-/* ---------- Ficha / tabla ---------- */
+
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.buscador {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+.buscador-icono {
+    position: absolute;
+    left: 12px;
+    color: #8a8579;
+    pointer-events: none;
+}
+
+.buscador-input {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    padding: 10px 14px 10px 36px;
+    border: 1.5px solid #DCD6C9;
+    border-radius: 3px;
+    width: 280px;
+    max-width: 100%;
+    background: var(--blanco);
+    transition: border-color .12s ease, box-shadow .12s ease;
+}
+.buscador-input:focus {
+    outline: none;
+    border-color: var(--amarillo-osc);
+    box-shadow: 0 0 0 3px rgba(245,183,0,0.25);
+}
+
 .ficha {
     background: var(--blanco);
     border-radius: 4px;
@@ -140,16 +179,22 @@ body {
     border: 1px solid rgba(0,0,0,0.06);
 }
 
-.tabla-scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
 table.tabla-obra {
     width: 100%;
-    min-width: 950px;
+    min-width: 1100px;
     border-collapse: collapse;
     margin: 0;
+}
+
+.tabla-obra td.col-acciones {
+    white-space: nowrap;
+}
+
+.tabla-obra td.col-registro {
+    max-width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .tabla-obra thead th {
@@ -192,7 +237,7 @@ table.tabla-obra {
     color: var(--tinta);
 }
 
-/* ---------- Etiqueta de estado (como ficha de seguridad) ---------- */
+
 .tag-estado {
     font-family: 'Oswald', sans-serif;
     font-size: 0.68rem;
@@ -214,16 +259,6 @@ table.tabla-obra {
     border: 1px solid #DCD6C9;
 }
 
-.tabla-obra td.col-correo {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.72rem;
-    color: #6b675e;
-    max-width: 140px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
 .vacio {
     text-align: center;
     padding: 50px 20px;
@@ -232,7 +267,7 @@ table.tabla-obra {
     font-style: italic;
 }
 
-/* ---------- Formularios ---------- */
+
 .formulario-obra {
     background: var(--blanco);
     padding: 32px;
